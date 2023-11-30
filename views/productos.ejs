@@ -1,0 +1,421 @@
+<!-- conectamos un nadvar para todas las ventanas -->
+<%- include('principal/sidebar.ejs'); %>
+
+<!-- estilos para titulo  -->
+
+<style>
+    /* Estilos para el modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 8px;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="transparent-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+           
+            <div class="carousel-caption">
+              <div class="centrado">
+                <h1 class="titulo">E-MueblesExpress</h1>
+              </div>
+            </div>
+        </div>
+  
+    </div>
+  </div>
+  
+
+<section class="py-12 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-8">¡Productos!</h2>
+
+    <div class="flex items-center justify-center">
+      <a href="#" class="flex flex-col items-center w-full max-w-xl p-4 my-4 bg-white border border-gray-200 rounded-lg shadow md:flex-row md:rounded-lg md:p-8 hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full h-96 md:w-48 md:h-auto md:rounded-none md:rounded-l-lg" src="images/person_9.jpg" alt="">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">BUSCAR PRODUCTOS</h5>
+          <div class="p-2 mx-auto text-gray-600 flex justify-center">
+            <form action="search" method="POST">
+              <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 w-96 rounded-lg text-sm focus:outline-none mr-1"
+              type="search" name="search" placeholder="Search">
+              <input type="submit"  class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-300">
+            
+            </form>
+            </div>    
+            </div>
+      </a>
+    </div>
+
+    <!-- Grid de Ofertas -->
+ 
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Producto 1 -->
+
+        
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://plazavea.vteximg.com.br/arquivos/ids/14208061-220-220/20200713.jpg?v=637939020029270000" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Ropa </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 20</h5>
+    <p class="text-green-500 font-bold">Precio: $580 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv2YRH5DYQPySOgCUDJgRZLCqXGhy0chPlAf6xY8Bc57PeHVtlE-wOLpAaolVK7AVBSvw&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Ropa </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 30 </h5>
+    <p class="text-green-500 font-bold">Precio: $680 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://www.mecalmuebles.com.py/storage/sku/caemmun-movelaria-ropero-ropero-clapton-15-bl-1-1-1699108202.jpg.webp" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Ropa</h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 34</h5>
+    <p class="text-green-500 font-bold">Precio: $670 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+ <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://www.mecalmuebles.com.py/storage/sku/caemmun-movelaria-ropero-ropero-santiago-buriti-bl-1-1-1699107284.jpg.webp" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Ropa </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 56</h5>
+    <p class="text-green-500 font-bold">Precio: $700 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQueGo39TPYYuyTMPy4DP30pnievtwUR3S5xDxWI7B7cMPvmxS_VT1MvowTMHstVuaYYww&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Ropa </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 24 </h5>
+    <p class="text-green-500 font-bold">Precio: $500 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://http2.mlstatic.com/D_NQ_NP_757503-MPE70324777297_072023-O.webp" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 32 </h5>
+    <p class="text-green-500 font-bold">Precio: $678 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://images.ecestaticos.com/JIYOMqKEpckdwVftb3w9KT6-NQY=/0x0:1111x741/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F400%2Ffa0%2F334%2F400fa0334404dd5825589fa5debbb746.jpg" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 78 </h5>
+    <p class="text-green-500 font-bold">Precio: $1200 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://comercialdelsol.com.do/wp-content/uploads/2023/02/Juego-de-Sala-Misuri29.jpg" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 56</h5>
+    <p class="text-green-500 font-bold">Precio: $1300 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5ABYlVcK_DL3qZ9VMJoAqWdFgspwhlMKZV9-tQjIZ2dqv9YBe2CpvaxggD6TSHI1TwXc&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 60 </h5>
+    <p class="text-green-500 font-bold">Precio: $1500 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://cdn.wallapop.com/images/10420/fg/j2/__/c10420p934755622/i3477219921.jpg?pictureSize=W320" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 24</h5>
+    <p class="text-green-500 font-bold">Precio: $1250 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbz6wRCiQCPQjwYmOVoeFTSMQM8n1Ush21HjlpEkr-OUhFU3GwyFMGBEW_dlRngIYwsqM&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 14 </h5>
+    <p class="text-green-500 font-bold">Precio: $1000 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://www.mueblesyaccesorios.com.co/cdn/shop/products/sofa-cama-L-Boston-bolena-plomo-mueblesyaccesorios_5.jpg?v=1696866668&width=1000" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 18 </h5>
+    <p class="text-green-500 font-bold">Precio: $1200 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://ambienta.com.co/wp-content/uploads/2020/05/SOFA-CAMA-OXFORD-500x313.jpg" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 29 </h5>
+    <p class="text-green-500 font-bold">Precio: $1400 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://http2.mlstatic.com/D_NQ_NP_824694-MLM46902649536_072021-O.webp" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 35 </h5>
+    <p class="text-green-500 font-bold">Precio: $2000 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://http2.mlstatic.com/D_NQ_NP_854428-MLV50036947011_052022-O.webp" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 35</h5>
+    <p class="text-green-500 font-bold">Precio: $1500 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAw14ilcjCH2SUSF9r32yX83z0lj_4Z_jcCFeEsfowfqMvj6VdsxGLaCzLeemzxcKKKkI&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 45 </h5>
+    <p class="text-green-500 font-bold">Precio: $1400 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://imcesa.com.pe/wp-content/uploads/2022/07/IMG_0280-juntos.jpg" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 67 </h5>
+    <p class="text-green-500 font-bold">Precio: 1300 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://ripleype.imgix.net/https%3A%2F%2Fs3.amazonaws.com%2Fimagenes-sellers-mercado-ripley%2F2021%2F09%2F15181417%2FVAL.COB_.2.jpg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=e2aedd1b4d68c32a9b9b3ac1bb7f17b0" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 45 </h5>
+    <p class="text-green-500 font-bold">Precio: $1700 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOz4lU02uJD8X69KhTR9R5vcaZaREQlo9menV0gMX4Rff0uunVwGfkcAdo2b-ztS-uVDU&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 29 </h5>
+    <p class="text-green-500 font-bold">Precio: $1700 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNK0LQ-el_SsjVwVyCBDc9pfaZOcBSqIULELccS8oYIAajqOfw8PoejlAYfjQkjzJxWjY&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 34 </h5>
+    <p class="text-green-500 font-bold">Precio: $1200 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ7zz6Io2D3tecgJ3cLJ8jx16gA7QZSMrvy4me3hfJy7JdCihm47Ntdegn7PO7BFxx-aw&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala</h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 56</h5>
+    <p class="text-green-500 font-bold">Precio: $2500 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://ripleype.imgix.net/https%3A%2F%2Fmedia-prod-use-1.mirakl.net%2FSOURCE%2Fbf95c6db05a3450faadb4802582da48b?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=c7fb532f9a3e5bcca2b9539cf1c9363f" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 23 </h5>
+    <p class="text-green-500 font-bold">Precio: $1800 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHjYDD94IXVZPcx97giq1QrBaiiJs5EdVK7e6_gBuKEvbpBSzKu7opsYQEVlEMMVjzykg&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 34</h5>
+    <p class="text-green-500 font-bold">Precio: $2300 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://ripleype.imgix.net/https%3A%2F%2Fdpq25p1ucac70.cloudfront.net%2Fseller-place-files%2Fmrkl-files%2F69%2FDECOHOGAR%2FMIAH-40-1_165450349193_3.jpeg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=1d49503a16017b0583d324151fe21298" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 26 </h5>
+    <p class="text-green-500 font-bold">Precio: $1400 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbWEAVy2qyqKQ3TaunPjPEu-XeCpqxs1XseMSTnaW8XtqI_Ik7-joxqnDc-1AFXVvmTzo&usqp=CAU" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 67 </h5>
+    <p class="text-green-500 font-bold">Precio: $1600 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://ripleype.imgix.net/https%3A%2F%2Fd20f60vzbd93dl.cloudfront.net%2Fuploads%2Ftienda_010305%2Ftienda_010305_7fd58c091ecae9943ae08bf338d5c67d3e4ee42f_producto_large_90.PNG?w=270&h=220&bg=FFFFFF&ch=Width%2CSave-Data&auto=format%2Ccompress&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=bb893d3f5a3ce2eff5f9ba8a1d724d03" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 74 </h5>
+    <p class="text-green-500 font-bold">Precio: $1300 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+
+  <div class="bg-white p-6 rounded-lg shadow-md">
+    <img src="https://ripleype.imgix.net/http%3A%2F%2Fs3.amazonaws.com%2Fimagenes-sellers-mercado-ripley%2F2019%2F11%2F26194239%2FSECC-SIEA11_31.jpg?w=750&h=555&ch=Width&auto=format&cs=strip&bg=FFFFFF&q=60&trimcolor=FFFFFF&trim=color&fit=fillmax&ixlib=js-1.1.0&s=ccf487c1f25c50f35b4ec721548d111a" alt="Producto 1" class="w-full h-48 object-cover mb-4 rounded-md">
+    <h3 class="text-xl font-bold mb-2"></h3>
+    <p class="text-gray-700 mb-4"></p>
+    <h3 class="text-xl font-bold mb-2">Categoria: Muebles de Sala </h3>
+    <h5 class="text-xl font-bold mb-2">Stock: 67 </h5>
+    <p class="text-green-500 font-bold">Precio: $2400 </p>
+    <button class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700" onclick="mostrarModal()">Agregar al Carrito</button>
+  </div>
+
+
+
+
+    </div>
+  
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="cerrarModal()">&times;</span>
+    <h2>¡Para Continuar!</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/2473/2473210.png" alt="Carrito de Compras" class="w-full mb-4">
+    <p>Para continuar, por favor inicia sesión o regístrate.</p>
+    <a href="/login" class="block">
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-700">
+          Iniciar Sesión
+      </button>
+  </a>
+  <a href="/register" class="block">
+    <button class="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700">
+        Registrarse
+    </button>
+</a>
+
+  </div>
+</div>
+
+<script>
+  // Funciones para mostrar y cerrar el modal
+  function mostrarModal() {
+    document.getElementById('myModal').style.display = 'flex';
+  }
+
+  function cerrarModal() {
+    document.getElementById('myModal').style.display = 'none';
+  }
+</script>
+  
+
+
+<%- include('principal/footer.ejs'); %>

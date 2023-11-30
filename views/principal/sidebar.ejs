@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@2.x.x/dist/alpine.min.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <!-- Incluir Font Awesome -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    body {
+        background: #ccb3c5;
+        background: -webkit-linear-gradient(to right, hsla(202, 95%, 37%, 0.459), hsla(214, 56%, 59%, 0.664)), url(https://revistaenergia.pe/wp-content/uploads/2021/10/YUNTA-Tienda-Terpel-780x470.jpg);
+        background: linear-gradient(to right, hsla(191, 97%, 34%, 0.459), hsla(272, 45%, 52%, 0.664)), url(https://revistaenergia.pe/wp-content/uploads/2021/10/YUNTA-Tienda-Terpel-780x470.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 50px; /* Ajusta la altura según tu diseño */
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 15px;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #ffd700; /* Cambia el color al pasar el mouse */
+    }
+
+    .cart {
+        display: flex;
+        align-items: center;
+    }
+
+    .cart a {
+        text-decoration: none;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .cart img {
+        height: 30px; /* Ajusta la altura según tu diseño */
+        margin-right: 5px;
+    }
+
+    .cart span {
+        background-color: #ffd700; /* Color del contador */
+        color: #333;
+        border-radius: 50%;
+        padding: 5px;
+        font-size: 12px;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+    }
+
+    /* Estilos para hacer el encabezado responsive */
+    @media only screen and (max-width: 600px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            flex-direction: column;
+        }
+
+        nav a {
+            margin: 5px 0;
+        }
+    }
+
+    /* Añade margen al cuerpo para compensar la altura del encabezado fijo */
+    body {
+        margin-top: 80px; /* Ajusta según la altura de tu encabezado */
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://blogesfera.com/wp-content/uploads/2015/02/tiendaonline.png" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/oferta">Ofertas</a></li>
+                <li><a href="/contactanos">Contacto</a></li>
+            </ul>
+        </nav>
+        <div>
+            <ul>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Registrarse</a></li>
+            </ul>
+        </div>
+    </header>

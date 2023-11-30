@@ -1,0 +1,127 @@
+<!-- conectamos un nadvar para todas las ventanas -->
+<%- include('principal/sidebar.ejs'); %>
+
+<!-- estilos para titulo  -->
+<style>
+    .centrado {
+      text-align: center;
+    }
+
+    .titulo {
+      margin-top: 50px;
+      color: #333;
+      font-size: 48px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background-color: #fff;
+      padding: 20px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* carrusel */
+
+    #transparent-carousel {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+
+    #transparent-carousel .carousel-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    #transparent-carousel .carousel-item {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* Fondo transparente */
+    }
+
+    #transparent-carousel img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+    }
+
+    #transparent-carousel .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+    }
+
+</style>
+
+<div id="transparent-carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+      <div class="carousel-item active">
+         
+          <div class="carousel-caption">
+            <div class="centrado">
+              <h1 class="titulo">La Casa de los Muebles</h1>
+            </div>
+          </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+
+<!-- estilos de home -->
+
+<style>
+  .inicio-home {
+    margin: 20px;
+    background-color: #f4f4f4; /* Color de fondo del contenedor inicio-home */
+    padding: 20px;
+  }
+  
+  .company-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .company-box img {
+    width: 90%; /* Ancho del 30% del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+ 
+  }
+
+  .company-box div {
+    width: 70%; /* Texto ocupa el 70% del ancho del contenedor */
+  }
+</style>
+
+<!-- Iniciamos el home -->
+<div class="inicio-home">
+  <div class="company-box">
+    <div>
+      <img src="https://media.istockphoto.com/id/1046843180/es/foto/feliz-mujer-de-compras-en-una-tienda-de-muebles.jpg?s=612x612&w=0&k=20&c=OBP9SZA6ijCd2n0SG1jGKEjJTVxnQ1P4k9VBsoVHeXY=" alt="Logo de la empresa">
+    </div>
+    <div>
+      <h2>E-MueblesExpress</h2>
+      <br>
+      <br>
+      <p>Descripción: E-MueblesExpress es tu tienda en línea especializada en la venta de muebles con entrega rápida y sin complicaciones. Ofrecemos una amplia selección de muebles para todos los gustos y presupuestos, desde elegantes sofás y mesas hasta prácticos muebles de almacenamiento. Con nuestro enfoque en la conveniencia y la eficiencia, nos comprometemos a proporcionar a nuestros clientes una experiencia de compra sin problemas. Nuestro catálogo está cuidadosamente curado para garantizar calidad y variedad, y trabajamos arduamente para asegurar que encuentres los muebles perfectos para tu hogar. En E-MueblesExpress, entendemos que tu tiempo es valioso, por lo que nos esforzamos por hacer que el proceso de compra de muebles en línea sea fácil, rápido y satisfactorio. Transforma tu espacio con estilo, comodidad y la facilidad de E-MueblesExpress.</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+<%- include('principal/footer.ejs'); %>

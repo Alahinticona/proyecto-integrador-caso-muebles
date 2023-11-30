@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/fotos-premium/acogedora-sala-estar-abundante-vegetacion-muebles-elegantes-creados-tecnologia-ia-generativa_410516-50617.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 65%; /* Ancho del formulario */
+            max-width: 400px; /* Máximo ancho para evitar que sea demasiado ancho en pantallas grandes */
+            text-align: center;
+        }
+
+        .cancel-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <img class="mx-auto mb-6" src="https://tuactividaddecredito.transunion.co/sites/CreditView/assets/images/recurrentSuscription/Login_TAC.png" alt="Logo" style="max-width: 150px;">
+
+        <form action="procesar_registro.php" method="POST">
+            <!-- Fila 1: Nombre y Apellido -->
+            <div class="mb-4 grid grid-cols-2 gap-4">
+                <div>
+                    <label for="nombre" class="block text-gray-600 text-sm font-semibold mb-2">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-400" placeholder="Ingrese su nombre" required>
+                </div>
+                <div>
+                    <label for="apellido" class="block text-gray-600 text-sm font-semibold mb-2">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-400" placeholder="Ingrese su apellido" required>
+                </div>
+            </div>
+
+            <!-- Fila 2: DNI y Fecha de Nacimiento -->
+            <div class="mb-4 grid grid-cols-2 gap-4">
+                <div>
+                    <label for="dni" class="block text-gray-600 text-sm font-semibold mb-2">DNI</label>
+                    <input type="text" id="dni" name="dni" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-400" placeholder="Ingrese su DNI" required>
+                </div>
+                <div>
+                    <label for="nacimiento" class="block text-gray-600 text-sm font-semibold mb-2">Fecha de Nacimiento</label>
+                    <input type="date" id="nacimiento" name="nacimiento" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-400" required>
+                </div>
+            </div>
+
+            <!-- Fila 3: Teléfono -->
+            <div class="mb-4">
+                <label for="telefono" class="block text-gray-600 text-sm font-semibold mb-2">Teléfono</label>
+                <input type="text" id="telefono" name="telefono" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-400" placeholder="Ingrese su teléfono" required>
+            </div>
+
+            <!-- Fila 4: Email y Contraseña -->
+            <div class="mb-4 grid grid-cols-2 gap-4">
+                <div>
+                    <label for="email" class="block text-gray-600 text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-400" placeholder="Ingrese su correo electrónico" required>
+                </div>
+                <div>
+                    <label for="password" class="block text-gray-600 text-sm font-semibold mb-2">Contraseña</label>
+                    <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-indigo-400" placeholder="Ingrese su contraseña (números y mayúsculas)" required>
+                </div>
+            </div>
+
+            <!-- Nivel (siempre marcado en "1") -->
+            <input type="hidden" id="nivel" name="nivel" value="1">
+
+            <!-- Botón de Registro -->
+            <button type="submit" class="w-full bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 focus:outline-none focus:shadow-outline-indigo active:bg-indigo-700">
+                Registrar
+            </button>
+
+            <!-- Botón de Cancelar -->
+            <button type="button" class="w-full mt-2 cancel-btn py-2 rounded hover:bg-gray-300 focus:outline-none focus:shadow-outline-gray active:bg-gray-400" onclick="window.location.href='/'">
+                Cancelar
+            </button>
+        </form>
+    </div>
+
+</body>
+
+</html>
